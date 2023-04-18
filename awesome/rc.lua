@@ -310,10 +310,15 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Prompt
+    -- Prompt (Dmenu)
     awful.key({ modkey },            "r",     function () 
     awful.util.spawn("dmenu_run") end,
               {description = "run dmenu prompt", group = "launcher"}),
+
+    -- Chromium 
+    awful.key({ modkey },            "b",     function () 
+    awful.util.spawn("chromium") end,
+              {description = "open internet browser", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
