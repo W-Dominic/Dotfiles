@@ -1,6 +1,8 @@
 -- START PLUGINS
 require("collision")()
-
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
+-- local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
 -- END PLUGINS
 
 -- If LuaRocks is installed, make sure that packages installed through it are
@@ -53,7 +55,7 @@ end
 beautiful.init("~/.config/awesome/themes/xresources/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -215,10 +217,13 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            -- todo_widget(),
+            volume_widget(),
+            -- mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
             s.mylayoutbox,
+            batteryarc_widget(), 
         },
     }
 end)
