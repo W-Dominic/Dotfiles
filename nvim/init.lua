@@ -1,0 +1,2 @@
+require("wdominic")
+print("hello")
