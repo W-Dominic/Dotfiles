@@ -17,4 +17,7 @@ return require('packer').startup(function(use)
 	-- Colorscheme Tokyonight
 	use 'folke/tokyonight.nvim'
 	vim.cmd[[colorscheme tokyonight-moon]]
+	
+	-- Treesitter
+	use ('nvim-treesitter/nvim-treesitter', {use = ':TSUpdate'} )
 end)
