@@ -1,2 +1,1 @@
 require("wdominic")
-print("hello")

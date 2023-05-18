@@ -1,2 +1,2 @@
 require("wdominic.remap")
-print("Hello there")
+require('wdominic.packer')
